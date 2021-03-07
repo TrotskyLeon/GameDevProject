@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -8,15 +9,24 @@ public class PlayerScript : MonoBehaviour
     public Transform gun;
     Rigidbody2D body;
 
+    public Text healthText;
+    public Text coinText;
+
     public float bulletSpeed = 750;
     float moveSpeed = 5;
     float horizontal;
     float vertical;
     float diagonalSpeed = 0.7f;
+
+    int healthAmount = 3;
+    public int coinAmount = 0;
+
+    PauseScript pauseScript;
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        pauseScript = GameObject.Find("EventSystem").GetComponent<PauseScript>();
     }
 
     // Update is called once per frame
@@ -25,15 +35,18 @@ public class PlayerScript : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
 
-        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 direction = mousePosition - (Vector2)transform.position;
-        transform.up = direction;
-
-        if (Input.GetMouseButtonDown(0))
+        if (!pauseScript.gamePaused)
         {
-            GameObject obj = Instantiate(bulletPrefab, gun.position, gun.rotation);
-            obj.name = "bullet";
-            obj.GetComponent<Rigidbody2D>().AddForce(gun.up * bulletSpeed);
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 direction = mousePosition - (Vector2)transform.position;
+            transform.up = direction;
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                GameObject obj = Instantiate(bulletPrefab, gun.position, gun.rotation);
+                obj.name = "bullet";
+                obj.GetComponent<Rigidbody2D>().AddForce(gun.up * bulletSpeed);
+            }
         }
     }
 
@@ -52,7 +65,14 @@ public class PlayerScript : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            Destroy(gameObject);
+            healthAmount--;
+            healthText.GetComponent<Text>().text = healthAmount.ToString();
+            Destroy(collision.gameObject);
+
+            if (healthAmount == 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

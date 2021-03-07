@@ -1,16 +1,19 @@
 ﻿<Properties StartupConfiguration="{E9C14AE5-1D01-3179-C1CD-FA0858BD35C2}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/BulletScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/PlayerScript.cs">
     <Files>
-      <File FileName="Assets/PlayerScript.cs" Line="47" Column="2" />
-      <File FileName="Assets/CameraScript.cs" Line="35" Column="44" />
-      <File FileName="Assets/BulletScript.cs" Line="19" Column="1" />
+      <File FileName="Assets/PlayerScript.cs" Line="42" Column="38" />
+      <File FileName="Assets/EnemyScript.cs" Line="33" Column="56" />
+      <File FileName="Assets/CameraScript.cs" Line="51" Column="34" />
+      <File FileName="Assets/BulletScript.cs" Line="11" Column="1" />
+      <File FileName="Assets/SpawnScript.cs" Line="42" Column="51" />
+      <File FileName="Assets/PauseScript.cs" Line="37" Column="32" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="NewProject" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="BulletScript.cs" selected="True" />
+              <Node name="PlayerScript.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -19,7 +22,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e3da0529-9f1e-42a1-91fd-66d8378e2ead" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="8369ea64-e023-4d24-b7d1-22f9bd76b081" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

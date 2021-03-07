@@ -66,9 +66,13 @@
   <ItemGroup>
     <Compile Include="Assets\BulletScript.cs" />
     <Compile Include="Assets\CameraScript.cs" />
+    <Compile Include="Assets\EnemyScript.cs" />
+    <Compile Include="Assets\PauseScript.cs" />
     <Compile Include="Assets\PlayerScript.cs" />
+    <Compile Include="Assets\SpawnScript.cs" />
     <Compile Include="Assets\test\test.cs" />
     <Compile Include="Assets\test\test2.cs" />
+    <Compile Include="Assets\test\test3.cs" />
     <Reference Include="UnityEngine">
       <HintPath>/Volumes/Leo/MAC/Unity/2019.4.17f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
